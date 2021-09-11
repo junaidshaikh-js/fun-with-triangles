@@ -12,6 +12,7 @@ html {
 }
 
 @import "quiz";
+@import "hypotenuse";
 
 body {
   background-color: #1f2937;
@@ -28,8 +29,7 @@ a {
   padding: 0.4rem 0.6rem;
 }
 
-label[for*="angle"]::after,
-.question::after {
+.required::after {
   position: relative;
   content: "*";
   color: red;
@@ -46,7 +46,7 @@ label[for*="angle"]::after,
 
 header,
 main {
-  max-width: 715px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
