@@ -1,0 +1,24 @@
+.quiz-instructions {
+  padding: 0.6rem 0;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.quiz-form {
+  margin: 1rem auto 3rem 0;
+
+  .question-container {
+    padding: 0.6rem 0;
+    margin-bottom: 2rem;
+    border-bottom: 2px dotted white;
+
+    .question {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  label {
+    display: block;
+  }
+}
