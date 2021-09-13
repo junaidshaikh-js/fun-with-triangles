@@ -24,7 +24,7 @@ function flush(score) {
 
   setTimeout(() => {
     para.remove();
-  }, 3000);
+  }, 5000);
 }
 
 quizForm.addEventListener("submit", (e) => {
@@ -32,9 +32,6 @@ quizForm.addEventListener("submit", (e) => {
   let index = 0;
 
   for (let value of formData) {
-    console.log(value);
-    console.log(value[0]);
-    console.log(value[1]);
     if (answers[index] == value[1]) {
       score++;
     }
