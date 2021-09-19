@@ -4,22 +4,21 @@ const heightValue = document.querySelector("#height");
 
 const hypotenuseForm = document.querySelector(".hypotenuse-form");
 
+const output = document.querySelector(".output");
+const submitBtn = document.querySelector('[type="submit"]');
+
 function flush(hypotenuse) {
-  let para = document.createElement("p");
-
-  para.innerHTML = `The length of hypotensuse is ${hypotenuse}`;
-
-  para.setAttribute("class", "result");
-  hypotenuseForm.insertBefore(
-    para,
-    hypotenuseForm.childNodes[hypotenuseForm.childNodes.length - 2]
-  );
+  submitBtn.innerHTML = "Calculating...";
+  output.innerHTML = "";
 
   setTimeout(() => {
-    para.remove();
-    baseValue.value = "";
-    heightValue.value = "";
+    output.setAttribute("class", "result");
+    output.innerHTML = `The length of hypotensuse is ${hypotenuse}`;
   }, 3000);
+
+  setTimeout(() => {
+    submitBtn.innerHTML = "Calculate Hypotenuse";
+  }, 2999);
 }
 
 function calculateHypotenuse(e) {
