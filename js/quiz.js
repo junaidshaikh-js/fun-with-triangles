@@ -1,5 +1,8 @@
 const quizForm = document.querySelector(".quiz-form");
 
+const output = document.querySelector(".output");
+const submitBtn = document.querySelector('[type="submit"]');
+
 let score = 0;
 
 const answers = [
@@ -12,19 +15,17 @@ const answers = [
 ];
 
 function flush(score) {
-  let para = document.createElement("p");
-
-  para.innerHTML = `You scored ${score} points`;
-
-  para.setAttribute("class", "result");
-  quizForm.insertBefore(
-    para,
-    quizForm.childNodes[quizForm.childNodes.length - 2]
-  );
+  submitBtn.innerHTML = "In progress...";
+  output.innerHTML = "";
 
   setTimeout(() => {
-    para.remove();
-  }, 5000);
+    output.setAttribute("class", "result");
+    output.innerHTML = `You scored ${score} points`;
+  }, 3000);
+
+  setTimeout(() => {
+    submitBtn.innerHTML = "Submit";
+  }, 2999);
 }
 
 quizForm.addEventListener("submit", (e) => {
