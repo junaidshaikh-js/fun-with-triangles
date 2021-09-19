@@ -4,22 +4,22 @@ const heightValue = document.querySelector("#height");
 
 const areaForm = document.querySelector(".area-form");
 
+const output = document.querySelector(".output");
+const submitBtn = document.querySelector('[type="submit"]');
+
 function flush(area) {
-  let para = document.createElement("p");
-
-  para.innerHTML = `The area of triangle is ${area}`;
-
-  para.setAttribute("class", "result");
-  areaForm.insertBefore(
-    para,
-    areaForm.childNodes[areaForm.childNodes.length - 2]
-  );
+  submitBtn.innerHTML = "Calculating...";
+  output.innerHTML = "";
 
   setTimeout(() => {
-    para.remove();
-    baseValue.value = "";
-    heightValue.value = "";
+    output.setAttribute("class", "result");
+    output.innerHTML = `The area of triangle is ${area}`;
+    output.setAttribute("class", "result");
   }, 3000);
+
+  setTimeout(() => {
+    submitBtn.innerHTML = "Calculate Area";
+  }, 2999);
 }
 
 function calculateArea(e) {
