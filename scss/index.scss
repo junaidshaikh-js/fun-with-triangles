@@ -139,6 +139,38 @@ form {
   border-bottom: 2px solid white;
 }
 
+// footer section
+ul {
+  list-style: none;
+  margin: 0.6rem 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-section-wrapper {
+  margin: 2rem auto;
+  width: 85vw;
+  max-width: 600px;
+}
+
+.footer-section {
+  text-align: center;
+
+  h2 {
+    margin: 1rem 0;
+    padding: 0.6rem 0;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+  }
+}
+
 @media screen and (min-width: 700px) {
   header {
     .header-title {
