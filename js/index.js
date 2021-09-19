@@ -6,30 +6,33 @@ const angle3 = document.querySelector("#angle-3");
 
 const angleForm = document.querySelector(".is-triangle-form");
 
-console.log(angleForm);
+const submitBtn = document.querySelector('[type="submit"]');
+
+const output = document.querySelector(".output");
 
 function flush(one, two, three) {
-  let sum = one + two + three;
-  let para = document.createElement("p");
-
-  if (sum == 180) {
-    para.innerText = `Yayy!! The angles forms a triangle`;
-  } else {
-    para.innerText = `Oh ho!! The angles do no form a triangle.`;
-  }
-
-  para.setAttribute("class", "result");
-  angleForm.insertBefore(
-    para,
-    angleForm.childNodes[angleForm.childNodes.length - 2]
-  );
+  submitBtn.innerHTML = "calculating...";
+  output.innerHTML = "";
 
   setTimeout(() => {
-    para.remove();
-    angle1.value = "";
-    angle2.value = "";
-    angle3.value = "";
+    let sum = one + two + three;
+
+    if (sum == 180) {
+      output.innerHTML = `Yayy!! The angles forms a triangle`;
+    } else {
+      output.innerText = `Oh no!! The angles do no form a triangle.`;
+    }
+
+    output.setAttribute("class", "result");
+    angleForm.insertBefore(
+      para,
+      angleForm.childNodes[angleForm.childNodes.length - 2]
+    );
   }, 3000);
+
+  setTimeout(() => {
+    submitBtn.innerHTML = "Check";
+  }, 2999);
 }
 
 function isTriangle(e) {
